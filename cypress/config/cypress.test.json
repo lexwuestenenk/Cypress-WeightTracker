@@ -1,0 +1,6 @@
+{
+    "env": {
+        "environment": "test",
+        "base_url": "localhost:8000"
+    }
+}
