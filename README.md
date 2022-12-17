@@ -14,6 +14,6 @@ To install & run cypress, please follow these steps:
 npm install cypress --save-dev
 ```
 # The config.js file is not in this git, but is needed for testing purposes. The file is not commited as it contains users & passwords
-Then, run ```npm run start-cypress:test``` or ```yarn run start-cypress:test``` (Only works with config.js file available)
+- Then, run ```npm run start-cypress:test``` or ```yarn run start-cypress:test``` (Only works with config.js file available)
 
 - You will now have a working cypress installation!
