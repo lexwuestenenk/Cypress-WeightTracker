@@ -12,3 +12,4 @@ To install & run cypress, please follow these steps:
 - Then, run ```npm run start-cypress:test``` or ```yarn run start-cypress:test``` (Only works with config.js file available)
 
 - You will now have a working cypress installation!
+- To run tests, the user will also need to have the WeightTracker project installed & running. To see more information, visit this [repo](https://github.com/lexwuestenenk/WeightTracker)
