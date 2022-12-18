@@ -16,6 +16,7 @@ module.exports = defineConfig({
   e2e: {
     "experimentalRunAllSpecs": true,
     env: {
+      // To make this account, run php artisan db:seed in the WeightTracker project.
       "email": "test-user@test.com",
       "password": "test",
     },
