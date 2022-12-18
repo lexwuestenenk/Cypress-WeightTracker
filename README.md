@@ -1,5 +1,4 @@
 # Cypress-WeightTracker
-Testing environment for WeightTracker
 
 This is the automated test environment I've setup for WeightTracker.
 
