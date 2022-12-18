@@ -4,7 +4,11 @@ class LandingPage {
     }
 
     getRegister() {
-       return  cy.get('[data-cy="register"]')
+        return cy.get('[data-cy="register"]')
+    }
+
+    getForgotPassword() {
+        return cy.get('[data-cy="forgot-password"]')
     }
 }
 

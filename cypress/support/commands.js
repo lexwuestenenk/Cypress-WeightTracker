@@ -80,6 +80,30 @@ Cypress.Commands.add('login', (email, password) => {
     forms.getFormSubmit().click()
 })
 
+Cypress.Commands.add('updatePassword', (password, newPassword) => {
+    // Only find elements within the password reset form
+    forms.getPasswordUpdateForm().within(() => {
+        forms.getCurrentPassword()
+            .click()
+            .clear()
+            .type(password)
+
+        // Fill in password twice
+        forms.getFormPassword()
+            .click()
+            .clear()
+            .type(newPassword)
+
+        forms.getFormPasswordConfirmation()
+            .click()
+            .clear()
+            .type(newPassword)
+
+        // Submit form
+        forms.getFormSubmit().click()
+    })
+})
+
 Cypress.Commands.add('createNewWorkout', (name, description) => {
     // Only get form elements within the "create-workout-form"
     // If "within" is not used, it will find multiple forms and break

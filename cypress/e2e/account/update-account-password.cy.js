@@ -4,11 +4,13 @@ import { assignEnvVariables, getFakeName, getFakeEmail, getFakePassword } from "
 // Import pageobjects. These contain locators for elements on the website.
 import LandingPage from "../../support/pageobjects/landing-page"
 import Forms from "../../support/pageobjects/forms"
+import Nav from "../../support/pageobjects/nav"
 
 const landingPage = new LandingPage()
 const forms = new Forms()
+const nav = new Nav()
 
-describe('Reset account password', () => {
+describe('Update account password', () => {
     // Assign env variables, so they only have to be loaded once
     const env = assignEnvVariables()
 
@@ -33,34 +35,34 @@ describe('Reset account password', () => {
         cy.url().should('include', '/dashboard')
     })
 
-    it('Reset password', function () {
+    it('Update password', function () {
         // Click login button
         landingPage.getLogin().click()
 
-        // Click forgot password
-        landingPage.getForgotPassword().click()
+        // Login to previously made account
+        cy.login(email, password)
 
-        // Enter mail in form
-        forms.getPasswordResetForm().within(() => {
-            forms.getFormEmail()
-                .click()
-                .clear()
-                .type(email)
-            
-            forms.getFormSubmit().click()
-        })
+        // Verify user is logged in
+        cy.url().should('include', '/dashboard')
+
+        // Go to profile
+        nav.getAccountDropdown().click()
+        nav.getProfile().click()
+
+        // Check user is on profile page
+        cy.url().should('include', '/profile')
+
+        cy.updatePassword(password, newPassword)
     })
 
-    it('Verify mail was sent through mailhog & reset password', function () {
-        cy.request(env.mail_url + '/api/v1/messages').then((response) => {
-            console.log(response.body[0].Content.Body)
-            const parser = new DOMParser()
-            const mail = parser.parseFromString(response.body[0].Content.Body, 'text/html')
-            const anchor = mail.querySelector("a.button")
-            console.log(anchor)
-            const password_reset_url = anchor.href
+    it('Login with new user information', function () {
+        // Click login button
+        landingPage.getLogin().click()
 
-            cy.visit(password_reset_url)
-        })
+        // Login to previously made account
+        cy.login(email, newPassword)
+
+        // Verify user is logged in
+        cy.url().should('include', '/dashboard')
     })
 })

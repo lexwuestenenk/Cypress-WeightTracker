@@ -36,6 +36,10 @@ class Forms {
         return cy.get('[data-cy="workout-create-form"]')
     }
 
+    getPasswordUpdateForm() {
+        return cy.get('[data-cy="password-update-form"]')
+    }
+
     getPasswordResetForm() {
         return cy.get('[data-cy="password-reset-form"]')
     }

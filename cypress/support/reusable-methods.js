@@ -5,6 +5,7 @@ const assignEnvVariables = () => {
     const env = {
         "environment": Cypress.env('environment'),
         "base_url": Cypress.env('base_url'),
+        "mail_url": Cypress.env('mail_url'),
         "email": Cypress.env('email'),
         "password": Cypress.env('password')
     } 
