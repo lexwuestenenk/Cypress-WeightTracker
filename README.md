@@ -9,8 +9,7 @@ To install & run cypress, please follow these steps:
 
 - CD (Change directory) into the newly created folder and run ```git init```, then ```git remote add origin <git-url>```
 - Pull the repository using ```git pull origin master```
-- After the repository has been cloned, run ```npm install cypress --save-dev``` to install cypress:
-## The config.js file is not in this git, but is needed for testing purposes. The file is not commited as it contains users & passwords
+- After the repository has been cloned, run ```npm install cypress --save-dev``` to install cypress
 - Then, run ```npm run start-cypress:test``` or ```yarn run start-cypress:test``` (Only works with config.js file available)
 
 - You will now have a working cypress installation!
