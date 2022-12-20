@@ -8,7 +8,7 @@ To install & run cypress, please follow these steps:
 
 - CD (Change directory) into the newly created folder and run ```git init```, then ```git remote add origin https://github.com/lexwuestenenk/Cypress-WeightTracker.git```
 - Pull the repository using ```git pull origin master```
-- After the repository has been cloned, run ```npm install cypress --save-dev``` to install cypress
+- After the repository has been cloned, run ```npm install cypress --save-dev``` or ```yarn install cypress --save-dev``` to install cypress
 - If needed, change the path in cypress.config.js from ```WeightTracker-Cypress``` to the name of your directory 
 - Then, run ```npm run start-cypress:test``` or ```yarn run start-cypress:test```
 
